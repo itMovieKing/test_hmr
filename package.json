@@ -1,0 +1,68 @@
+{
+  "scripts": {
+    "dev": "NODE_ENV=development node server.js",
+    "build": "rm -fr .next && next build",
+    "start": "NODE_ENV=production node server.js",
+    "postinstall": "link-module-alias",
+    "postuninstall": "link-module-alias",
+    "commit": "git-cz",
+    "analyze": "ANALYZE=true next build",
+    "lint": "stylelint \"**/*.scss\" "
+  },
+  "dependencies": {
+    "@react-oauth/google": "^0.7.0",
+    "@reduxjs/toolkit": "^1.9.1",
+    "big.js": "^6.2.1",
+    "cropperjs": "1.5.6",
+    "express": "4.17.1",
+    "helmet": "^3.22.0",
+    "i18next": "^21.6.14",
+    "isomorphic-unfetch": "3.0.0",
+    "morgan": "^1.10.0",
+    "next": "^12.3.4",
+    "next-i18next": "^11.0.0",
+    "next-seo": "^4.4.0",
+    "nookies": "2.0.8",
+    "normalize.css": "8.0.1",
+    "preact": "^10.19.5",
+    "preact-render-to-string": "^6.3.1",
+    "rc-dialog": "7.5.13",
+    "react": "npm:@preact/compat@^18.3.1",
+    "react-dom": "npm:@preact/compat@^18.3.1",
+    "react-i18next": "^11.16.2",
+    "react-redux": "^8.0.5",
+    "react-slick": "0.25.2",
+    "sass": "^1.26.3",
+    "slick-carousel": "1.8.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.9",
+    "@commitlint/cli": "8.2.0",
+    "@commitlint/config-conventional": "8.2.0",
+    "@next/bundle-analyzer": "9.1.4",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "cz-conventional-changelog": "3.0.2",
+    "http-proxy-middleware": "0.20.0",
+    "husky": "3.0.9",
+    "link-module-alias": "^1.2.0",
+    "lint-staged": "^13.2.3",
+    "postcss-scss": "^4.0.7",
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard-scss": "^10.0.0",
+    "url-loader": "2.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.scss": "stylelint --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}

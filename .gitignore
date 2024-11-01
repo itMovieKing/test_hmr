@@ -1,0 +1,8 @@
+node_modules
+*.log
+*.temp
+.next
+.vscode
+.idea
+.DS_Store
+.npmrc
